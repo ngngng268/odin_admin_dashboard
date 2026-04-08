@@ -4,7 +4,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr minmax(50%, 80%) 1fr;
+    grid-template-columns: 1fr minmax(50%, 60%) 1fr;
     grid-template-rows: 1fr 1fr 100%;
     gap: 15px;
 }
