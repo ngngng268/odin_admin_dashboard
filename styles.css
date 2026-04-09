@@ -8,6 +8,7 @@
     list-style: none;
     font-family: roboto, sans-serif;
     --theme-color: rgb(131, 180, 226);
+
 }
 
 img {
@@ -81,6 +82,7 @@ body {
     background-color: var(--theme-color);
     color: white;
     font-size: 25px;
+    font-weight: bold;
 }
 
 .left-sidebar img {
@@ -98,4 +100,14 @@ body {
 
 .right-sidebar {
     grid-area: 3 / 3 / 4 / 4;
+}
+
+.left-sidebar li {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 15fr;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0;
 }
