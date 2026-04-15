@@ -92,6 +92,7 @@ body {
     align-items: center;
     justify-content: center;
     align-self: center;
+    place-items: center;
 }
 
 .header>div.searchbar>button {
@@ -99,6 +100,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0;
+    place-items: center;
 }
 
 .left-sidebar {
@@ -225,10 +227,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     column-gap: 5px;
-    grid-template-rows: repeat(2, 2em);
-    padding: 5px;
+    grid-template-rows: repeat(2, minmax(max-content, 2em));
     justify-content: center;
     align-items: center;
+    height: max-content;
 }
 
 .right-sidebar>div.trending>ul>li>img {
