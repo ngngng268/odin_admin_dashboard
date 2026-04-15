@@ -8,19 +8,23 @@
     list-style: none;
     font-family: roboto, sans-serif;
     --theme-color: rgb(131, 180, 226);
-
+    --light-grey: rgb(226, 226, 226);
 }
 
 img {
-    height: 1em;
-    width: auto;
+    height: 1.3em;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr minmax(50%, 60%) 1fr;
     grid-template-rows: repeat(2, 1fr) 100%;
- 
+    margin: 0px;
+    padding: 0;
+    max-width: 100%;
+    background-color: var(--light-grey)
 }
 
 .logo {
@@ -47,12 +51,14 @@ body {
     grid-template-columns: 4fr 3fr;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
 }
 
 .header>div>input {
     border-style: none;
     border-radius: 15px;
     width: 80%;
+    height: 25px;
     background-color: rgb(214, 214, 214);
 }
 
@@ -68,6 +74,16 @@ body {
     align-items: center;
     justify-content: end;
     gap: 15px;
+    padding-right: 25px;
+}
+
+.header>div.user img {
+    height: 2em;
+}
+
+.header img {
+    height: 2em;
+    margin: auto;
 }
 
 .header>div.searchbar {
@@ -75,6 +91,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    align-self: center;
+}
+
+.header>div.searchbar>button {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 .left-sidebar {
@@ -91,15 +115,128 @@ body {
 
 .taskbar {
     grid-area: 2 / 2 / 3 / 4;
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: 1fr 3fr 3fr;
+    grid-template-rows: 30px;
+    box-shadow: 0px 5px 2px gray;
+    background-color: white;
+}
+
+.taskbar>img {
+    grid-area: 1 / 1/ 3 / 2;
+    height: 3em;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.taskbar>h6 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.taskbar>p {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.taskbar>ul {
+    grid-area: 1 / 3 / 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.taskbar>ul>li>button {
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--theme-color);
+    padding: 10px;
+    width: 80%;
+    font-weight: bold;
+    color: white;
 }
 
 .projects {
     grid-area: 3 / 2 / 4 / 3;
-
+    padding: 15px;
+    ;
 }
+
+.projects>ul {
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: minmax(200px, 1fr);
+}
+
+.projects>ul>li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-left-style: solid;
+    border-left-color: orange;
+    border-left-width: 10px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.projects>ul>li>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+}
+
+.projects button {
+    border-style: none;
+    background-color: white;
+}
+
 
 .right-sidebar {
     grid-area: 3 / 3 / 4 / 4;
+    padding: 15px;
+}
+
+.right-sidebar>div>ul {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.right-sidebar>div>ul>li {
+    width: 90%;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 2px;
+}
+
+.right-sidebar>div>ul>:last-child {
+    border-bottom-style: none;
+}
+
+.right-sidebar>div.trending>ul>li {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 5px;
+    grid-template-rows: repeat(2, 2em);
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-sidebar>div.trending>ul>li>img {
+    grid-area: 1 / 1 / 3 / 2;
+    height: 3em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: auto;
 }
 
 .left-sidebar li {
@@ -110,4 +247,12 @@ body {
     align-items: center;
     gap: 0.3em;
     padding: 0;
+    font-size: 0.7em;
+}
+
+div.user>p {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 3px;
 }
